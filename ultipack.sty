@@ -1,0 +1,69 @@
+%% to load before \documentclass %%
+%\RequirePackage[l2tabu,orthodox]{nag}
+
+%% include in the document with \usepackage{ultipack}
+\ProvidesPackage{ultipack}
+
+%% common packages %%
+\usepackage{fixltx2e}
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[french,english]{babel}
+
+
+%% layout and structure packages %%
+\usepackage{setspace}
+\usepackage[autostyle]{csquotes}
+
+%\usepackage{fancyhdr}
+%\usepackage{pdflscape}
+%\usepackage{multicol}
+
+
+%% mathematical packages %%
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{amsfonts,amssymb}
+\usepackage{amsthm}
+
+\usepackage{siunitx}
+
+
+%% tables and figures packages %%
+\usepackage{graphicx}
+
+\usepackage{booktabs,tabu,multirow}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcommand*{\otoprule}{\midrule[\heavyrulewidth]}
+
+\usepackage{caption,subcaption}
+
+
+%% programming packages %%
+%\usepackage{listings}
+%\usepackage{algpseudocode}
+
+
+%% bibliography and cross-referencing packages %%
+%\usepackage[backend=bibtex,style=numeric-comp]{biblatex}
+%\usepackage{acronym}
+%\usepackage{nomentbl}
+
+
+%% miscellaneous packages %%
+%\usepackage{blindtext}
+%\usepackage[mode=multiuser]{fixme}
+
+
+%% must be loaded at the end %%
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,citecolor=green,filecolor=cyan,linkcolor=red,urlcolor=blue}
+
+\usepackage[french,english,noabbrev]{cleveref}
+
+
+%% to list the necessary packages and files %%
+%\listfiles
+
