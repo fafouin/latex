@@ -1,69 +1,98 @@
 %% to load before \documentclass %%
+% check for common mistakes and obsolete packages
 %\RequirePackage[l2tabu,orthodox]{nag}
 
-%% include in the document with \usepackage{ultipack}
+%% make this files behave like a package %% 
+%% include with \usepackage{ultipack} %%
 \ProvidesPackage{ultipack}
 
-%% common packages %%
-\usepackage{fixltx2e}
-\usepackage{microtype}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage[french,english]{babel}
 
+%% common packages %%
+\usepackage{fixltx2e} % desirable LaTeX 2e fixes
+\usepackage{microtype} % typographic improvements
+\usepackage[utf8]{inputenc} % UTF-8 input encoding
+\usepackage[T1]{fontenc} % T1 font encoding
+\usepackage{lmodern} % Latin modern font families (for accented characters)
+\usepackage[french, english]{babel} % LaTeX internationalization
 
 %% layout and structure packages %%
-\usepackage{setspace}
-\usepackage[autostyle]{csquotes}
+%\usepackage{fullpage} % change the margins so that the full page is used
+%\usepackage[letterpaper]{geometry} % customize the page geometry
+%\geometry{options} 
 
-%\usepackage{fancyhdr}
-%\usepackage{pdflscape}
-%\usepackage{multicol}
+\usepackage{setspace} % change the line spacing
+%\usepackage[parfill]{parskip} % remove paragraph indentation
+%\setlength{\parindent}{1cm} 
+
+%\usepackage{fancyhdr} % fine control of pages headers and footers
+%\pagestyle{options} % contents of headers and footers
+%\pagenumbering{options} % format of page numbers
+
+%\usepackage{pdflscape} % landscape environment (with PDF support)
+%\usepackage{multicol} % create multicolumns documents
+
+\usepackage[autostyle]{csquotes} % advanced quotes environments and control
+%\usepackage[toc]{appendix} % better control of appendices
 
 
 %% mathematical packages %%
-\usepackage{mathtools}
-\usepackage{bm}
-\usepackage{amsfonts,amssymb}
-\usepackage{amsthm}
+\usepackage{mathtools} % load amsmath, correct bugs and provide useful tools
+\usepackage{bm} % allow bold math symbols (replaces amsbsy)
+\usepackage{amsfonts,amssymb} % AMS math font and symbols
+\usepackage{amsthm} % AMS theorem environment
 
-\usepackage{siunitx}
+\usepackage{siunitx} % consistent typesetting of numbers and units
+%\sisetup{free-standing-units,space-before-unit,use-xspace} % to use units outside si and SI commands
 
 
 %% tables and figures packages %%
-\usepackage{graphicx}
+\usepackage{graphicx} % extended graphics functionalities
 
-\usepackage{booktabs,tabu,multirow}
+\usepackage{booktabs,tabu,multirow} % improved tables
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcommand*{\otoprule}{\midrule[\heavyrulewidth]}
 
-\usepackage{caption,subcaption}
+\usepackage{caption,subcaption} % better control of captions and subcaptions
+%\captionsetup{format=plain,justification=centerlast,width=0.9\textwidth}
+%\captionsetup[sub]{subrefformat=parens} 
+\addto\captionsfrench{\renewcommand{\tablename}{\textsc{Tableau}}}
+%\usepackage{captcont} % control captions for multipages floats
+
+%\usepackage{asymptote} % include asymptote figures
+%\usepackage{tikz}
+%\usetikzlibrary{list,of,libraries}
 
 
 %% programming packages %%
-%\usepackage{listings}
-%\usepackage{algpseudocode}
+%\usepackage{listings} % include programming code into the document
+%\lstset{language=Matlab, basicstyle=\footnotesize, linewidth=0.95\textwidth, frame=single, tabsize=2, breaklines=true, numbers=right, numberstyle=\tiny, numbersep=5pt, showspaces=false, showtabs=false, showstringspaces=false} 
+
+%\usepackage{fancyvrb} % fancy verbatim environments
+%\usepackage{algpseudocode} % produce algorithms/pseudo-code
 
 
 %% bibliography and cross-referencing packages %%
-%\usepackage[backend=bibtex,style=numeric-comp]{biblatex}
-%\usepackage{acronym}
-%\usepackage{nomentbl}
+%\usepackage[backend=bibtex,style=numeric-comp]{biblatex} % biblatex (csquotes is recommended)
+%\usepackage{acronym} % create a list of acronyms
+%\usepackage{nomentbl} % create a list of symbols (nomencl in a longtable)
 
 
 %% miscellaneous packages %%
-%\usepackage{blindtext}
-%\usepackage[mode=multiuser]{fixme}
+%\usepackage{xspace} % automatically add a space after symbols (loaded by other packages)
+% use delimited macros instead? \cmd/ : \newcommand*{\cmd}{}\def\cmd/{command}
+
+%\usepackage[table]{xcolor} % colors manipulations 
+%\usepackage{blindtext} % generate a dummy document
+%\usepackage[mode=singleuser]{fixme} % standalone and multiuser annotations
 
 
 %% must be loaded at the end %%
-\usepackage{hyperref}
-\hypersetup{colorlinks=true,citecolor=green,filecolor=cyan,linkcolor=red,urlcolor=blue}
+\usepackage{hyperref} % control hyperlinks in the document
+\hypersetup{colorlinks=true, citecolor=green, filecolor=cyan, linkcolor=red, urlcolor=blue}
 
-\usepackage[french,english,noabbrev]{cleveref}
+\usepackage[french,english,noabbrev]{cleveref} % improved cross-referencing
 
 
-%% to list the necessary packages and files %%
+%% include a list of necessary packages and files in the log file %%
 %\listfiles
-
+% possible to combine with bundledoc to create an archive with all the files needed
