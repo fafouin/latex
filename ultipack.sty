@@ -2,7 +2,7 @@
 % check for common mistakes and obsolete packages
 %\RequirePackage[l2tabu,orthodox]{nag}
 
-%% make this files behave like a package %% 
+%% make this files behave like a package %%
 %% include with \usepackage{ultipack} %%
 \ProvidesPackage{ultipack}
 
@@ -18,11 +18,11 @@
 %% layout and structure packages %%
 %\usepackage{fullpage} % change the margins so that the full page is used
 %\usepackage[letterpaper]{geometry} % customize the page geometry
-%\geometry{options} 
+%\geometry{options}
 
 \usepackage{setspace} % change the line spacing
 %\usepackage[parfill]{parskip} % remove paragraph indentation
-%\setlength{\parindent}{1cm} 
+%\setlength{\parindent}{1cm}
 
 %\usepackage{fancyhdr} % fine control of pages headers and footers
 %\pagestyle{options} % contents of headers and footers
@@ -54,18 +54,18 @@
 
 \usepackage{caption,subcaption} % better control of captions and subcaptions
 \captionsetup{format=plain,justification=centerlast,width=0.9\textwidth}
-\captionsetup[sub]{subrefformat=parens} 
+\captionsetup[sub]{subrefformat=parens}
 \addto\captionsfrench{\renewcommand{\tablename}{\textsc{Tableau}}}
 %\usepackage{captcont} % control captions for multipages floats
 
-%\usepackage{asymptote} % include asymptote figures
+%\usepackage[inline]{asymptote} % include asymptote figures
 %\usepackage{tikz}
 %\usetikzlibrary{list,of,libraries}
 
 
 %% programming packages %%
 %\usepackage{listings} % include programming code into the document
-%\lstset{language=Matlab, basicstyle=\footnotesize, linewidth=0.95\textwidth, frame=single, tabsize=2, breaklines=true, numbers=right, numberstyle=\tiny, numbersep=5pt, showspaces=false, showtabs=false, showstringspaces=false} 
+%\lstset{language=Matlab, basicstyle=\footnotesize, linewidth=0.95\textwidth, frame=single, tabsize=2, breaklines=true, numbers=right, numberstyle=\tiny, numbersep=5pt, showspaces=false, showtabs=false, showstringspaces=false}
 
 %\usepackage{fancyvrb} % fancy verbatim environments
 %\usepackage{algpseudocode} % produce algorithms/pseudo-code
@@ -80,17 +80,17 @@
 %% miscellaneous packages %%
 %\usepackage{xspace} % automatically add a space after symbols (loaded by other packages)
 
-%\usepackage[table]{xcolor} % colors manipulations 
+%\usepackage[table]{xcolor} % colors manipulations
 %\usepackage{blindtext} % generate a dummy document
 %\usepackage[obeyDrafti,dvistyle]{todonotes} % add todo notes
 
 
 %% must be loaded at the end %%
-\usepackage{hyperref} % control hyperlinks in the document
+\usepackage[dvipdfmx]{hyperref} % control hyperlinks in the document
 \hypersetup{colorlinks=true, citecolor=green, filecolor=cyan, linkcolor=red, urlcolor=blue}
 
 \usepackage[french,english,noabbrev]{cleveref} % improved cross-referencing
-
+%\usepackage[xindy,toc,acronym]{glossaries} % create glossaries, symbols, acronyms
 
 %% include a list of necessary packages and files in the log file %%
 %\listfiles
