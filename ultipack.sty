@@ -8,90 +8,182 @@
 
 
 %% common packages %%
-\usepackage{fixltx2e} % desirable LaTeX 2e fixes
-\usepackage{microtype} % typographic improvements
-\usepackage[utf8]{inputenc} % UTF-8 input encoding
-\usepackage[T1]{fontenc} % T1 font encoding
-\usepackage{lmodern} % Latin modern font families (for accented characters)
-\usepackage[french, english]{babel} % LaTeX internationalization
+% desirable LaTeX 2e fixes
+\usepackage{fixltx2e}
+% typographic improvements
+\usepackage{microtype}
+% UTF-8 input encoding and T1 font encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% Latin modern font families (for accented characters)
+\usepackage{lmodern}
+% LaTeX internationalization
+\usepackage[french, english]{babel}
+% setup for french in babel package
+\frenchbsetup{
+    CompactItemize=false, % do not compact lists
+    ThinSpaceInFrenchNumbers=true % thin space in numbers
+}
 
 %% layout and structure packages %%
-%\usepackage{fullpage} % change the margins so that the full page is used
-%\usepackage[letterpaper]{geometry} % customize the page geometry
+% change the margins so that the full page is used
+%\usepackage{fullpage}
+% customize the page geometry
+%\usepackage[letterpaper]{geometry}
 %\geometry{options}
 
-\usepackage{setspace} % change the line spacing
-%\usepackage[parfill]{parskip} % remove paragraph indentation
+% change the line spacing
+\usepackage{setspace}
+% remove paragraph indentation
+%\usepackage[parfill]{parskip}
+% control paragraph indentation
 %\setlength{\parindent}{1cm}
 
-%\usepackage{fancyhdr} % fine control of pages headers and footers
-%\pagestyle{options} % contents of headers and footers
-%\pagenumbering{options} % format of page numbers
+% fine control of pages headers and footers
+%\usepackage{fancyhdr}
+% contents of headers and footers
+%\pagestyle{options}
+% format of page numbers
+%\pagenumbering{options}
 
-%\usepackage{pdflscape} % landscape environment (with PDF support)
-%\usepackage{multicol} % create multicolumns documents
+% landscape environment (with PDF support)
+%\usepackage{pdflscape}
+% create multicolumns documents
+%\usepackage{multicol}
 
-\usepackage[autostyle]{csquotes} % advanced quotes environments and control
-%\usepackage[toc]{appendix} % better control of appendices
+% advanced quotes environments and control
+\usepackage[autostyle]{csquotes}
+% better control of appendices
+%\usepackage[toc]{appendix}
 
 
 %% mathematical packages %%
-\usepackage{mathtools} % load amsmath, correct bugs and provide useful tools
-\usepackage{bm} % allow bold math symbols (replaces amsbsy)
-\usepackage{amsfonts,amssymb} % AMS math font and symbols
-\usepackage{amsthm} % AMS theorem environment
-
-\usepackage{siunitx} % consistent typesetting of numbers and units
-%\sisetup{free-standing-units,space-before-unit,use-xspace} % to use units outside si and SI commands
+% load amsmath, correct bugs and provide useful tools
+\usepackage{mathtools}
+% allow bold math symbols (replaces amsbsy)
+\usepackage{bm}
+% AMS math font and symbols
+\usepackage{amsfonts,amssymb}
+% AMS theorem environment
+\usepackage{amsthm}
+% consistent typesetting of numbers and units
+\usepackage{siunitx}
+% setup for siunitx package
+%\sisetup{
+    %free-standing-units, % to use units abbreviations outside si commands
+    %space-before-unit, % add a space between a number and a free unit
+    %use-xspace % add a space after a free unit if necessary
+%}
 
 
 %% tables and figures packages %%
-\usepackage{graphicx} % extended graphics functionalities
-
-\usepackage{booktabs,tabu,multirow} % improved tables
+% extended graphics functionalities
+\usepackage{graphicx}
+% improved tables
+\usepackage{booktabs,tabu,multirow}
+% new column type: centered paragraph
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+% new rule type for under the table header
 \newcommand*{\otoprule}{\midrule[\heavyrulewidth]}
-
-\usepackage{caption,subcaption} % better control of captions and subcaptions
-\captionsetup{format=plain,justification=centerlast,width=0.9\textwidth}
-\captionsetup[sub]{subrefformat=parens}
+% better control of captions and subcaptions
+\usepackage{caption,subcaption}
+% setup for caption package
+\captionsetup{
+    format=plain, % format of the caption: normal paragraph
+    justification=centerlast, % center the last lineof caption
+    width=0.9\textwidth % width of caption
+}
+% setup for subcaption package
+\captionsetup[sub]{
+    subrefformat=parens % add parentheses to subfig reference
+}
+% rename the french tables caption to "Tableau" instead of "Table"
 \addto\captionsfrench{\renewcommand{\tablename}{\textsc{Tableau}}}
-%\usepackage{captcont} % control captions for multipages floats
+% control captions for multipages floats
+%\usepackage{captcont}
 
-%\usepackage[inline]{asymptote} % include asymptote figures
+% create or include Asymptote figures
+%\usepackage{asymptote}
+% create or include Tikz/PGF figures
 %\usepackage{tikz}
+% list of Tikz/PGF libraries to load
 %\usetikzlibrary{list,of,libraries}
 
 
 %% programming packages %%
-%\usepackage{listings} % include programming code into the document
-%\lstset{language=Matlab, basicstyle=\footnotesize, linewidth=0.95\textwidth, frame=single, tabsize=2, breaklines=true, numbers=right, numberstyle=\tiny, numbersep=5pt, showspaces=false, showtabs=false, showstringspaces=false}
-
-%\usepackage{fancyvrb} % fancy verbatim environments
-%\usepackage{algpseudocode} % produce algorithms/pseudo-code
+% include program listings into the document
+%\usepackage{listings}
+% setup for Matlab listings
+%\lstset{language=Matlab,
+    %basicstyle=\footnotesize,
+    %linewidth=0.95\textwidth,
+    %frame=single,
+    %tabsize=2,
+    %breaklines=true,
+    %numbers=right,
+    %numberstyle=\tiny,
+    %numbersep=5pt,
+    %showspaces=false,
+    %showtabs=false,
+    %showstringspaces=false
+%}
+% fancy verbatim environments
+%\usepackage{fancyvrb}
+% produce algorithms/pseudo-code
+%\usepackage{algpseudocode}
 
 
 %% bibliography and cross-referencing packages %%
-\usepackage[backend=biber,url=true,doi=false,isbn=false,style=numeric-comp]{biblatex} % biblatex
-%\usepackage{acronym} % create a list of acronyms
-%\usepackage{nomentbl} % create a list of symbols (nomencl in a longtable)
+% biblatex with Biber backend and numeric-comp style
+\usepackage[backend=biber,style=numeric-comp]{biblatex}
+% setup for biblatex package
+\ExecuteBibliographyOptions{
+    sorting=none, % references are listed in citation order
+    url=false, % print url when appropriate
+    doi=false, % never print DOI
+    isbn=false % never print ISBN/ISSN/ISRN
+}
+% create a list of acronyms, symbols, etc.
+%\usepackage{acronym}
+%\usepackage{nomentbl}
 
 
 %% miscellaneous packages %%
-%\usepackage{xspace} % automatically add a space after symbols (loaded by other packages)
+% automatically add a space after symbols (loaded by other packages)
+%\usepackage{xspace}
 
-%\usepackage[table]{xcolor} % colors manipulations
-%\usepackage{blindtext} % generate a dummy document
-%\usepackage[obeyDrafti,dvistyle]{todonotes} % add todo notes
+% colors manipulations (often loaded by other packages)
+%\usepackage[table]{xcolor}
+% generate a dummy document
+%\usepackage{blindtext}
+% add todo notes (add option "final" to disable)
+%\usepackage[colorinlistoftodos]{todonotes}
+% define commands for new types of todos
+%\newcommand{\addref}{\todo[color=red!40]{Add reference(s).}}
+%\newcommand{\addcont}[1]{\todo[inline,color=green!40,caption={Add contents.}]{#1}}
+%\newcommand{\longtodo}[1]{\todo[inline]{#1}}
 
 
 %% must be loaded at the end %%
-\usepackage[dvipdfmx]{hyperref} % control hyperlinks in the document
-\hypersetup{colorlinks=true, citecolor=green, filecolor=cyan, linkcolor=red, urlcolor=blue}
-
-\usepackage[french,english,noabbrev]{cleveref} % improved cross-referencing
-%\usepackage[xindy,toc,acronym]{glossaries} % create glossaries, symbols, acronyms
+% control hyperlinks in the document
+\usepackage[dvipdfmx]{hyperref}
+% setup for hyperref package
+\hypersetup{
+    colorlinks, % color links
+    %allcolors=blue, % set the color for all links
+    citecolor=green, % set the color for citations
+    filecolor=cyan, % set the color for files links
+    linkcolor=red, % set the color for document links
+    urlcolor=blue % set to color for URLs
+}
+% improved cross-referencing
+\usepackage[french,english,noabbrev]{cleveref}
+% create glossaries, symbols, acronyms, etc. (instead of acronym or nomentbl)
+%\usepackage[xindy,acronym,nonumberlist,nosuper,notree,shortcuts,nohypertypes=]{glossaries}
+% print defined labels (add option "final" to disable)
+%\usepackage[notref,notcite]{showkeys}
 
 %% include a list of necessary packages and files in the log file %%
 %\listfiles
 % possible to combine with bundledoc to create an archive with all the files needed
+
