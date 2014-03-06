@@ -6,7 +6,7 @@ This project includes various files and folders that can be useful when starting
 * `ultipack.sty`: metapackage providing common and useful LaTeX packages. Many are commented out and can be used only when needed.
 * `mathoper.tex`: custom mathematical operators.
 * `abbrevs.tex`: file that can be used to define project-specific commands and abbreviations.
-* `bib`: folder where the project BibTeX/BibLaTeX files can be stored.
+* `bib`: folder where the project BibTeX/BibLaTeX files can be stored. It includes an empty BibTeX file (in order to track it).
 * `latexmkrc`: local configuration file for latexmk that sets the TEXINPUT and BIBINPUT environment variables so that it is not necessary to specify the path to ancillary files present in the latex folder (this project). This file must be linked to the main folder of the LaTeX project (see below).
 * `gitignore`: local gitignore file where common ancillary LaTeX file (and other) extensions have been added. This file must be linked to the main folder of the LaTeX project (see below).
 
