@@ -1,3 +1,5 @@
+# include file extensions that Git will ignore
+
 !.gitignore
 *~
 *.log
