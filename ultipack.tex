@@ -4,7 +4,7 @@
 
 %% make this files behave like a package %%
 %% include with \usepackage{ultipack} %%
-\ProvidesPackage{ultipack}
+%\ProvidesPackage{ultipack}
 
 
 %% common packages %%
@@ -35,7 +35,7 @@
 % change the line spacing
 \usepackage{setspace}
 % remove paragraph indentation
-%\usepackage[parfill]{parskip}
+\usepackage[parfill]{parskip}
 % control paragraph indentation
 %\setlength{\parindent}{1cm}
 % easily input or include files in folders
@@ -80,7 +80,7 @@
 
 %% tables and figures packages %%
 % extended graphics functionalities
-\usepackage[dvipdfmx]{graphicx}
+\usepackage{graphicx}
 % improved tables
 \usepackage{booktabs,tabu,multirow}
 % multipage tables
@@ -91,14 +91,11 @@
 \newcommand*{\otoprule}{\midrule[\heavyrulewidth]}
 % better control of captions and subcaptions
 \usepackage{caption,subcaption}
-% setup for caption package
+% setup for caption and subcaption packages
 \captionsetup{
     format=plain, % format of the caption: normal paragraph
     justification=centerlast, % center the last lineof caption
-    width=0.9\textwidth % width of caption
-}
-% setup for subcaption package
-\captionsetup[sub]{
+    width=0.9\textwidth, % width of caption
     subrefformat=parens % add parentheses to subfig reference
 }
 % rename the french tables caption to "Tableau" instead of "Table"
@@ -113,9 +110,16 @@
 % create or include Tikz/PGF figures
 %\def\pgfsysdriver{pgfsys-dvipdfm.def}
 %\usepackage{tikz}
+%\usepackage{pgfplots}
+% compatibility mode for PGF plots
+%\pgfplotsset{compat=newest}
+% disable support for math expressions in plot coordinates
+%\pgfplotsset{plot coordinates/math parser=false}
 % list of Tikz/PGF libraries to load
 %\usetikzlibrary{list,of,libraries}
-
+% define new variables to set figure dimensions
+%\newlength\figurewidth
+%\newlength\figureheight
 
 %% programming packages %%
 % include program listings into the document
@@ -173,7 +177,7 @@
 
 %% must be loaded at the end %%
 % control hyperlinks in the document
-\usepackage[dvipdfmx]{hyperref}
+\usepackage{hyperref}
 % setup for hyperref package
 \hypersetup{
     colorlinks, % color links

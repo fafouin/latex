@@ -8,7 +8,7 @@
 # pdf generation mode
 # 0: no pdf, 1: use pdflatex, 2: generate pdf from ps file (ps2pdf),
 # 3: generate pdf from dvi file (dvipdf)
-$pdf_mode = 3;
+$pdf_mode = 1;
 
 # latex and pdflatex commands to execute
 $latex = "latex %O %S";
