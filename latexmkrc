@@ -16,8 +16,8 @@ $pdflatex = "pdflatex %O %S";
 # make command to execute
 $make = "make";
 # index processing command to execute
-#$makeindex = "makeindex %O -o $D $S";
-$makeindex = "texindy %O -o $D $S";
+$makeindex = "makeindex %O -o %D %S";
+#$makeindex = "texindy %O -o %D %S";
 # biber command to execute
 $biber = "biber %O %S";
 # bibtex command to execute
