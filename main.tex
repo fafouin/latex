@@ -1,0 +1,42 @@
+%%% main file for LaTeX document %%%
+
+%%% ensure that common good practices are respected
+\RequirePackage[l2tabu,orthodox]{nag}
+
+%%% class of the document and options
+\documentclass[12pt, letterpaper, titlepage]{article}
+
+%%% packages to load
+\input{latex/ultipack}
+
+%%% custom mathematical operators and project-specific abbreviations
+\input{latex/mathoper}
+\input{latex/abbrevs}
+
+%%% path(s) to figure files %%%
+%\graphicspath{{./figures/}}
+
+%%% bibliography files (BibLaTex)
+%\addbibresource{refs.bib}
+%% bibliography style (if BibLaTex: defined in package options)
+%\bibliographystyle{ieeetr}
+
+%%% define title page contents
+\title{A simple LaTeX document}
+\author{John Doe}
+\date{\today}
+
+%%% beginning of the document
+\begin{document}
+
+%% create title page
+\maketitle
+
+%% bibliography (if BibLaTex: file imported in preamble)
+%\nocite{*}
+%\printbibliography % BibLaTeX
+%\bibliography{refs}
+
+%%% end of the document
+\end{document}
+

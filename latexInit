@@ -1,0 +1,30 @@
+#!/usr/bin/sh
+
+### script to initialize the LaTeX document ###
+
+## TODO:
+## - choose the LaTeX compilation type (pdflatex, latex) and the output
+##  file type (pdf, ps, dvi), and modify the latexmkrc and ultipack (options
+##  for graphicx, hyperref and cleveref) files accordingly
+
+## NAME OF THE MAIN LATEX DOCUMENT (without extension) ##
+NAME=document
+
+##########
+
+# get paths to current directory and its parent
+DIR=$(echo "${PWD##*/}")
+PATH=$(pwd)
+PARENT=$(dirname $dir)
+
+# create symlinks for the gitignore and latexmkrc files
+# into the parent directory
+ln -s $PATH/latexmkrc $PARENT/.latexmkrc
+ln -s $PATH/gitignore $PARENT/.gitignore
+
+# find and replace current directory name in main.tex
+sed -i '%s/input{latex/input{$DIR/g' main.tex
+
+# move and rename the main document file into the parent directory
+mv main.tex $PARENT/$NAME.tex
+
