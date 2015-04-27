@@ -1,0 +1,47 @@
+[user]
+    name = AAA BBB
+    email = aaa.bbb@domain.org
+[github]
+    user = aaaBBB
+[core]
+    editor = vim
+    pager = less -x5
+    excludesfile = ~/.gitignore
+    autocrlf = input
+    whitespace = trailing-space,space-before-tab,indent-with-non-tab
+[credential]
+    helper = cache --timeout=1800
+[color]
+    ui = true
+[help]
+    autocorrect = 0
+[branch]
+    autosetupmerge = true
+    autosetuprebase = always
+[rebase]
+    autosquash = true
+[rerere]
+    enabled = true
+    autoupdate = true
+[push]
+    default = simple
+[merge]
+    ff = true
+    tool = vimdiff
+[diff]
+    renames = copies
+    tool = vimdiff
+[status]
+    short = true
+[alias]
+    st = status
+    ma = checkout master
+    co = checkout
+    br = branch
+    up = pull
+    last = log -1 HEAD
+    unstage = reset HEAD --
+    sgraph = log --graph --pretty=format:'%Cred%h%Creset %ae %C(yellow)%d%Creset - %s' --abbrev-commit --date=relative
+    wdiff = diff --color-words
+    report = log --format='+ %h <%ad>: %s (%an)' --no-merges --date=short
+
