@@ -1,5 +1,13 @@
 %% define commands to easily input project-specific blocks of text
 %% mathematical operators
+% redefine the subscript operator "_" to generate roman subscripts
+% use "\sb{}" to generate italic subscripts
+%\begingroup
+    %\catcode`\_=\active
+    %\gdef_#1{\sb{\mathrm{#1}}}
+%\endgroup
+%\mathcode`\_=\string"8000
+%\catcode`\_=12
 
 %% text abbreviations
 
