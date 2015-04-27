@@ -1,5 +1,6 @@
 # local latexmk configuration file
 # change according to your need
+# 'misc/latexmkrc.home' contains additional options
 
 # dvi generation mode
 #$dvi_mode = 0;

@@ -1,4 +1,4 @@
-# include file extensions that Git will ignore
+# include file extensions that Git will ignore (LaTeX-specific)
 
 !.gitignore
 *~
