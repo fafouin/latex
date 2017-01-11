@@ -58,14 +58,14 @@ $clean_full_ext = "";
 $dependents_list = 0;
 
 # to automatically make glossaries
-sub makeglossaries {
-    if ( $silent ) { system( "makeglossaries -q '$_[0]'" ); }
-    else { system( "makeglossaries '$_[0]'" ); };
-}
-add_cus_dep( "glo", "gls", 0, "makeglossaries" );
-add_cus_dep( "acn", "acr", 0, "makeglossaries" );
-push @generated_exts, "glo", "gls", "glg";
-push @generated_exts, "acn", "acr", "alg";
+#sub makeglossaries {
+    #if ( $silent ) { system( "makeglossaries -q '$_[0]'" ); }
+    #else { system( "makeglossaries '$_[0]'" ); };
+#}
+#add_cus_dep( "glo", "gls", 0, "makeglossaries" );
+#add_cus_dep( "acn", "acr", 0, "makeglossaries" );
+#push @generated_exts, "glo", "gls", "glg";
+#push @generated_exts, "acn", "acr", "alg";
 
 # to automatically compile Asymptote files
 #my $cwd = cwd();
