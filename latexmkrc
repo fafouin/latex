@@ -11,6 +11,12 @@
 # 3: generate pdf from dvi file (dvipdf)
 $pdf_mode = 1;
 
+# run the previewer after the run
+$preview_mode = 0;
+# automatically run latexmk to keep the preview up-to-date
+$preview_continuous_mode = 0;
+
+
 # latex and pdflatex commands to execute
 $latex = "latex %O %S";
 $pdflatex = "pdflatex %O %S";
@@ -45,7 +51,7 @@ $cleanup_includes_cusdep_generated = 0;
 # also cleanup generated files listed in the log file
 $cleanup_includes_generated = 0;
 # extra extensions of files to clean
-$clean_ext = "dvi run.xml pre %R.ist %R.xdy";
+$clean_ext = "dvi run.xml pre %R.ist %R.xdy tdo";
 $clean_full_ext = "";
 
 # display a list of dependencies after a run
@@ -62,10 +68,11 @@ push @generated_exts, "glo", "gls", "glg";
 push @generated_exts, "acn", "acr", "alg";
 
 # to automatically compile Asymptote files
-sub asy {
-    system( "asy -o asy/ '$_[0]'" );
-}
-add_cus_dep( "asy", "eps", 0, "asy" );
-add_cus_dep( "asy", "pdf", 0, "asy" );
-add_cus_dep( "asy", "tex", 0, "asy" );
+#my $cwd = cwd();
+#sub asy {
+    #system( "export ASYMPTOTE_DIR=$cwd/asy; asy -o asy/ '$_[0]'" );
+#}
+#add_cus_dep( "asy", "eps", 0, "asy" );
+#add_cus_dep( "asy", "pdf", 0, "asy" );
+#add_cus_dep( "asy", "tex", 0, "asy" );
 

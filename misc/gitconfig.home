@@ -1,38 +1,88 @@
+### global Git configuration file
+
+# user name and email and github account information
 [user]
     name = AAA BBB
     email = aaa.bbb@domain.org
 [github]
     user = aaaBBB
+
+# core configuration
 [core]
     editor = vim
-    pager = less -x5
-    excludesfile = ~/.gitignore
+    pager = less
+    excludesFile = ~/.gitignore
     autocrlf = input
-    whitespace = trailing-space,space-before-tab,indent-with-non-tab
+    whitespace = trailing-space,space-before-tab
+
+# settings for an external credential helper
 [credential]
     helper = cache --timeout=1800
+
+# colors configuration
 [color]
     ui = true
-[help]
-    autocorrect = 0
+
+# columns outputs configuration
+[column]
+    ui = auto
+
+# git-branch settings
 [branch]
-    autosetupmerge = true
-    autosetuprebase = always
-[rebase]
-    autosquash = true
-[rerere]
-    enabled = true
-    autoupdate = true
-[push]
-    default = simple
-[merge]
-    ff = true
-    tool = vimdiff
+    autoSetupMerge = true
+    autoSetupRebase = always
+
+# git-diff and diff tool settings
 [diff]
+    mnemonicPrefix = true
     renames = copies
     tool = vimdiff
+    submodule = log
+[difftool]
+    prompt = false
+
+# git-merge and merge tool settings
+[merge]
+    conflictStyle = merge
+    ff = true
+    stat = true
+    tool = vimdiff
+[mergetool]
+    prompt = false
+    keepBackup = false
+
+# git-push settings
+[push]
+    default = simple
+
+# git-rebase settings
+[rebase]
+    stat = true
+    autosquash = true
+
+# git-rerere settings (reuse recorded conflicts resolution)
+[rerere]
+    enabled = true
+    autoUpdate = true
+
+# git-log settings
+[log]
+    abbrevCommit = false
+    decorate = short
+    showRoot = true
+
+# git-status settings
 [status]
     short = true
+    branch = false
+    showUntrackedFiles = normal
+    submoduleSummary = false
+
+# git help settings
+[help]
+    autocorrect = 10
+
+# user-defined aliases
 [alias]
     st = status
     ma = checkout master
