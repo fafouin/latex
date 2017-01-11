@@ -4,21 +4,21 @@
 \RequirePackage[l2tabu,orthodox]{nag}
 
 %%% class of the document and options
-\documentclass[12pt, letterpaper, titlepage]{article}
+\documentclass[12pt, letterpaper, titlepage, english]{article}
 
-%%% packages to load
-\input{latex/ultipack}
+%%% load useful packages
+\input{ultipack}
 
-%%% custom mathematical operators and project-specific abbreviations
-\input{latex/mathoper}
-\input{latex/abbrevs}
+%%% load additional math operators and definitions
+\input{mathDefinitions}
 
 %%% path(s) to figure files %%%
 %\graphicspath{{./figures/}}
 
-%%% bibliography files (BibLaTex)
+%%% bibliography database(s) (BibLaTex)
 %\addbibresource{refs.bib}
-%% bibliography style (if BibLaTex: defined in package options)
+
+%% bibliography style (BibTeX)
 %\bibliographystyle{ieeetr}
 
 %%% define title page contents
@@ -32,10 +32,10 @@
 %% create title page
 \maketitle
 
-%% bibliography (if BibLaTex: file imported in preamble)
+%% bibliography
 %\nocite{*}
 %\printbibliography % BibLaTeX
-%\bibliography{refs}
+%\bibliography{refs} % BibTeX
 
 %%% end of the document
 \end{document}
