@@ -54,8 +54,8 @@
 %\newcommand*{\mdef}{\coloneqq} % mathematical definition (alternative)
 
 % derivative and partial derivative
-% usage (same for \Dp): \D{order (1 if omitted or empty)}{function}{variable}
-% examples: \D{f(x)}{x} => d(f(x))/dx, \D{2}{f(x)}{x} => d^2(f(x))/dx^2
+% usage (same for \Dp): \D[order (1 if omitted or empty)]{function}{variable}
+% examples: \D{f(x)}{x} => d(f(x))/dx, \D[2]{f(x)}{x} => d^2(f(x))/dx^2
 \newcommand*{\D}[3][]{\frac{\dif\ifthenelse{\isempty{#1}}{}{^#1}\,#2}{\dif #3\ifthenelse{\isempty{#1}}{}{^#1}}}
 \newcommand*{\Dp}[3][]{\frac{\partial\ifthenelse{\isempty{#1}}{}{^#1}\,#2}{\partial #3\ifthenelse{\isempty{#1}}{}{^#1}}}
 
