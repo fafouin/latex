@@ -57,7 +57,9 @@
 % control spacing in lists
 %\usepackage{enumitem}
 % setup for the enumitem package (see documentation)
-%\set{topsep=0pt, itemsep=0pt}
+%\setlist{topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt}
+%\setlist[1]{labelindent=\parindent}
+%\setlist{leftmargin=*, nosep}
 
 % advanced control over headers and footers
 %\usepackage{fancyhdr}
@@ -125,9 +127,10 @@
     %format=plain, % format of the caption: normal paragraph
     %justification=centerlast, % center the last line in caption
     %width=0.9\textwidth, % width of caption
-    %subrefformat=parens % add parentheses to subfig reference
+    %subrefformat=parens, % add parentheses to subfig reference
+    %skip=5pt,
 %}
-%\captionsetup[sub]{options}
+%\captionsetup[subfigure]{options}
 % rename the tables caption in French to "Tableau", instead of "Table"
 %\addto\captionsfrench{\renewcommand{\tablename}{\textsc{Tableau}}}
 % control captions for multipages floats
@@ -169,6 +172,8 @@
     url=false, % print url when appropriate?
     doi=false, % print DOI?
     isbn=false % print ISBN/ISSN/ISRN?
+    firstinits=true, % print initial(s) for the first names
+    maxnames=50, % number of authors before using "et al."
 }
 
 % create lists of acronyms, symbols, etc.
@@ -216,6 +221,7 @@
 %\usepackage[colorinlistoftodos]{todonotes}
 % define commands for new types of todos
 %\newcommand{\longtodo}[1]{\todo[inline]{#1}}
+%\newcommand{\longtodo}[2][]{\ifthenelse{\isempty{#1}}{\todo[inline,caption={#2}]{#2}}{\todo[inline,caption={#1}]{#2}}}
 %\newcommand{\addref}{\todo[color=red!40]{Add reference(s).}}
 %\newcommand{\addcont}[2][]{\ifthenelse{\isempty{#1}}{\todo[inline,color=green!40,caption={#2}]{#2}}{\todo[inline,color=green!40,caption={#1}]{#2}}}
 %\newcommand{\note}[2][]{\ifthenelse{\isempty{#1}}{\todo[inline,color=blue!40,caption={#2}]{#2}}{\todo[inline,color=green!40,caption={#1}]{#2}}}
@@ -238,6 +244,10 @@
 }
 % improved cross-referencing
 \usepackage[noabbrev]{cleveref} % do not abbreviate cross-reference names
+% change label for equations, figures and tables
+%\crefname{equation}{}{}
+%\crefname{figure}{Fig.}{Figs.}
+%\creflabelformat{equation}{(#2#1#3)}
 % create glossaries, symbols, acronyms, etc. (instead of acronym or nomentbl)
 %\usepackage[xindy,acronym,nonumberlist,nosuper,notree,shortcuts,nohypertypes=]{glossaries}
 % print the labels (add option "final" to disable)
