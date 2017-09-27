@@ -72,7 +72,7 @@
 %\newcommand_[1]{\ensuremath{\sb{\mathrm{#1}}}}
 \begingroup
   \catcode`\_=\active
-  \newcommand_[1]{\ensuremath{\sb{\mathrm{#1}}}}
+  \gdef_#1{\ensuremath{\sb{\mathrm{#1}}}}
 \endgroup
 \mathcode`\_=\string"8000
 \catcode`\_=12
