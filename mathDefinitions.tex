@@ -68,6 +68,13 @@
 
 % redefine underscore (_) to produce roman subscripts
 % use \sb{} for italic subscripts
-\catcode`_=\active
-\newcommand_[1]{\ensuremath{\sb{\mathrm{#1}}}}
+%\catcode`_=\active
+%\newcommand_[1]{\ensuremath{\sb{\mathrm{#1}}}}
+\begingroup
+  \catcode`\_=\active
+  \newcommand_[1]{\ensuremath{\sb{\mathrm{#1}}}}
+\endgroup
+\mathcode`\_=\string"8000
+\catcode`\_=12
+\newcommand*{\T}[1]{\mathrm{#1}} % shorter command for roman math font
 
