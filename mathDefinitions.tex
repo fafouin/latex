@@ -1,9 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% USEFUL COMMANDS FOR MATHEMATICAL OPERATORS
 %%%
-%%% Author: Louis-Philippe Rousseau (ULaval)
-%%% Created: ages ago
-%%% Updated: November 2016, January 2017
+%%% Author: Louis-Philippe Rousseau (Université Laval)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% LOAD NECESSARY PACKAGES %%%
@@ -66,6 +64,9 @@
 % example: \evalat{f(x)}{2}{4} => f(x)|_2^4, \evalat{f(x)}{x=x_0}{} => f(x)|_{x=x_0}
 \newcommand*{\evalat}[3]{\left. #1 \right\rvert\sb{#2}\ifthenelse{\isempty{#3}}{}{^{#3}}}
 
+% shorter command for roman math font
+\newcommand*{\T}[1]{\mathrm{#1}}
+
 % redefine underscore (_) to produce roman subscripts
 % use \sb{} for italic subscripts
 %\catcode`_=\active
@@ -76,5 +77,4 @@
 \endgroup
 \mathcode`\_=\string"8000
 \catcode`\_=12
-\newcommand*{\T}[1]{\mathrm{#1}} % shorter command for roman math font
 
